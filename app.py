@@ -27,6 +27,7 @@ st.markdown("#### **مين هو الأسطورة الحقيقي واللي ذو�
 html_code = """
 <div style="position: relative; height: 280px; width: 100%; border: 2px solid #d9534f; border-radius: 12px; background-color: #fffdf9; padding: 20px; box-shadow: inset 0 0 10px rgba(0,0,0,0.05);">
     
+    <!-- زرار محمد (البطل) -->
     <button id="mohamed_btn" onclick="showResult()" style="
         position: absolute; 
         left: 15%; 
@@ -44,6 +45,7 @@ html_code = """
         محمد 😎
     </button>
 
+    <!-- زرار رغد (المتغير والمتحول) -->
     <button id="raghad_btn" onmouseover="transformButton()" ontouchstart="transformButton()" onclick="transformButton()" style="
         position: absolute; 
         left: 55%; 
@@ -61,6 +63,7 @@ html_code = """
         رغد 🌸
     </button>
     
+    <!-- رسالة النتيجة النهائية المضبوطة -->
     <div id="final_result" style="
         text-align: center; 
         padding-top: 170px; 
@@ -75,17 +78,20 @@ html_code = """
 </div>
 
 <script>
-// دالة تحويل الزرار وتغيير الكلمة فوراً واللون وحمايته من اللمس
 function transformButton() {
     var btn = document.getElementById('raghad_btn');
-    
-    // تغيير النص واللون والـ ID لضمان التحول الكامل
     btn.innerHTML = "محمد برضه 😎";
     btn.style.backgroundColor = "#337ab7";
-    
-    // إزاحة خفيفة للوسط لتوكيد المقلب وجعله يقع في منتصف الخيارات
     btn.style.left = "45%";
 }
 
 function showResult() {
     document.getElementById('final_result').style.display = 'block';
+    document.getElementById('raghad_btn').style.display = 'none';
+    document.getElementById('mohamed_btn').style.display = 'none';
+}
+</script>
+"""
+
+# تشغيل المقلب المطور
+components.html(html_code, height=330)
