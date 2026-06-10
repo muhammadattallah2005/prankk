@@ -38,16 +38,13 @@ components.html(html_zabadi, height=200)
 
 st.write("---")
 
-# 3. السؤال الثالث الجديد (مقلب الشاي - زرار حلو يهرب)
+# 3. السؤال الثالث (مقلب الشاي)
 st.markdown("""### **السؤال الثالث (الكيف الهندسي):**""")
 st.markdown("""#### **طعم الشاي نتن ولا حلو؟ ☕**""")
 
 html_tea = """
 <div style="position: relative; height: 180px; width: 100%; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; padding: 10px;">
-    <!-- زرار حلو اللي بيهرب -->
     <button id="sweet_tea" onmouseover="moveTea()" ontouchstart="moveTea()" onclick="moveTea()" style="position: absolute; left: 25%; top: 50px; background-color: #28a745; color: white; border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 20px; cursor: pointer;">حلو وزي الفل 😍</button>
-    
-    <!-- زرار نتن الثابت -->
     <button onclick="alert('تم تسجيل إجابتك: الشاي نتن ومالوش عازة ❌')" style="position: absolute; left: 60%; top: 50px; background-color: #ba7a3a; color: white; border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 20px; cursor: pointer;">نتن 🤮</button>
 </div>
 <script>
@@ -83,30 +80,54 @@ components.html(html_anime, height=200)
 
 st.write("---")
 
-# 5. السؤال الخامس والأخير (أسطورة الأكل)
-st.markdown("""### **السؤال الخامس والأخير (حسم اللقب):**""")
+# 5. السؤال الخامس الجديد (مقلب الاسم - زرار محمد يهرب)
+st.markdown("""### **السؤال الخامس (الهوية الشخصية):**""")
+st.markdown("""#### **اسمي محمد ولا عطاالله؟ 🧐**""")
+
+html_name = """
+<div style="position: relative; height: 180px; width: 100%; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; padding: 10px;">
+    <button id="mohamed_name_btn" onmouseover="moveName()" ontouchstart="moveName()" onclick="moveName()" style="position: absolute; left: 25%; top: 50px; background-color: #ff9f43; color: white; border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 20px; cursor: pointer;">محمد 🤷‍♂️</button>
+    
+    <button onclick="alert('صح كدة! اسمك الأسطوري هو عطاالله 👑')" style="position: absolute; left: 60%; top: 50px; background-color: #0abde3; color: white; border: none; padding: 12px 35px; font-size: 16px; font-weight: bold; border-radius: 20px; cursor: pointer;">عطاالله 👑</button>
+</div>
+<script>
+function moveName() {
+    var btn = document.getElementById('mohamed_name_btn');
+    btn.style.left = (Math.random() * (window.innerWidth - 150)) + 'px';
+    btn.style.top = (Math.random() * 100) + 'px';
+}
+</script>
+"""
+components.html(html_name, height=200)
+
+st.write("---")
+
+# 6. السؤال السادس والأخير (أسطورة الأكل - زرار رغد يتحول لعطاالله)
+st.markdown("""### **السؤال السادس والأخير (حسم اللقب التاريخي):**""")
 st.markdown("""#### **مين هو الأسطورة الحقيقي واللي ذوقه دايماً أحسن في الأكل؟**""")
 
 html_food = """
 <div style="position: relative; height: 260px; width: 100%; border: 2px solid #d9534f; border-radius: 12px; background-color: #fffdf9; padding: 20px;">
-    <button id="mohamed_btn" onclick="showResult()" style="position: absolute; left: 15%; top: 60px; background-color: #337ab7; color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">محمد 😎</button>
+    <button id="atallah_btn" onclick="showResult()" style="position: absolute; left: 15%; top: 60px; background-color: #337ab7; color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">عطاالله 😎</button>
+
     <button id="raghad_btn" onmouseover="transformButton()" ontouchstart="transformButton()" onclick="transformButton()" style="position: absolute; left: 55%; top: 60px; background-color: #f05454; color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: all 0.1s ease-in-out;">رغد 🌸</button>
+    
     <div id="final_result" style="text-align: center; padding-top: 150px; font-size: 19px; font-weight: bold; color: #d9534f; display: none; line-height: 1.6;">
         🎉 ذكاء خارق واعتراف تاريخي لا مفر منه! 🎉<br>
-        تم تسجيل الإجابات وتوثيقها بالكامل: محمد هو أسطورة الأكل الرسمي والوحيد في الشلة، بذوقه العالي وبإقرار صريح من رغد وباقي المقاطعة! 🍔 تفضلوا بقبول فائق الاحترام لذوق القيادة! 🚀
+        تم تسجيل الإجابات وتوثيقها بالكامل: عطاالله هو أسطورة الأكل الرسمي والوحيد في الشلة، بذوقه العالي وبإقرار صريح من رغد وباقي المقاطعة! 🍔 تفضلوا بقبول فائق الاحترام لذوق القيادة! 🚀
     </div>
 </div>
 <script>
 function transformButton() {
     var btn = document.getElementById('raghad_btn');
-    btn.innerHTML = "محمد برضه 😎";
+    btn.innerHTML = "عطاالله برضه 😎";
     btn.style.backgroundColor = "#337ab7";
     btn.style.left = "45%";
 }
 function showResult() {
     document.getElementById('final_result').style.display = 'block';
     document.getElementById('raghad_btn').style.display = 'none';
-    document.getElementById('mohamed_btn').style.display = 'none';
+    document.getElementById('atallah_btn').style.display = 'none';
 }
 </script>
 """
